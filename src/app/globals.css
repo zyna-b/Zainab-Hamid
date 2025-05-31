@@ -56,8 +56,16 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans; /* font-sans is primary trigger via layout.tsx */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Explicitly apply font-sans to common text elements and form controls */
+  /* This ensures they inherit or use Poppins if browser defaults interfere */
+  h1, h2, h3, h4, h5, h6,
+  p, span, div, a, li,
+  input, textarea, select, button {
+    @apply font-sans;
   }
 }
