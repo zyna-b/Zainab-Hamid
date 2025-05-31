@@ -74,12 +74,9 @@ export default {
         },
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
-      boxShadow: {
-        neumorphic: '15px 15px 30px #191919, -15px -15px 30px #3c3c3c',
+        lg: 'var(--radius)', // effectively 1rem
+        md: 'calc(var(--radius) - 0.25rem)', // effectively 0.75rem
+        sm: 'calc(var(--radius) - 0.5rem)', // effectively 0.5rem
       },
       keyframes: {
         'accordion-down': {

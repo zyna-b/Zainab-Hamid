@@ -6,48 +6,48 @@
   :root {
     /* Light theme (can be used as an alternative if needed) */
     --background: 0 0% 98%; /* Pearl White */
-    --foreground: 240 60% 7%; /* Dark Navy */
+    --foreground: 0 0% 8%; /* Darker for contrast with reds */
     --card: 0 0% 100%;
-    --card-foreground: 240 60% 7%;
+    --card-foreground: 0 0% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 60% 7%;
-    --primary: 274 100% 50%; /* Electric Violet */
+    --popover-foreground: 0 0% 8%;
+    --primary: 348 83% 47%; /* Cherry Red */
     --primary-foreground: 0 0% 98%; /* Pearl White */
-    --secondary: 274 100% 90%; /* Lighter Mauve/Violet */
-    --secondary-foreground: 274 100% 30%; /* Darker Violet for contrast */
-    --muted: 240 20% 90%; /* Light Grey Blue */
-    --muted-foreground: 240 20% 40%; /* Darker Grey Blue */
-    --accent: 274 100% 84%; /* Blush Mauve */
-    --accent-foreground: 240 60% 7%; /* Dark Navy */
+    --secondary: 0 100% 25%; /* Burgundy */
+    --secondary-foreground: 0 0% 98%; /* Pearl White */
+    --muted: 0 0% 90%; /* Light Grey */
+    --muted-foreground: 0 0% 40%; /* Darker Grey */
+    --accent: 340 70% 73%; /* Light Rose/Pink */
+    --accent-foreground: 0 100% 15%; /* Dark Burgundy for text on accent */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 20% 85%;
-    --input: 240 20% 90%;
-    --ring: 274 100% 50%; /* Electric Violet */
-    --radius: 1.875rem; /* 30px */
+    --border: 0 0% 85%;
+    --input: 0 0% 90%;
+    --ring: 348 83% 57%; /* Lighter Cherry Red for ring */
+    --radius: 1rem; /* Updated radius */
   }
 
   .dark {
-    --background: 240 60% 7%; /* Dark Navy #0A0A23 */
+    --background: 0 0% 8%; /* Very Dark Grey/Black #141414 */
     --foreground: 0 0% 98%; /* Pearl White #FAFAFA */
-    --card: 0 0% 13%;       /* #212121 - User's card background */
+    --card: 0 0% 13%;       /* Dark Grey #212121 */
     --card-foreground: 0 0% 98%; /* Pearl White */
-    --popover: 0 0% 10%;     /* #1A1A1A - Darker than card for popovers */
+    --popover: 0 0% 10%;     /* Slightly Darker Grey #1A1A1A */
     --popover-foreground: 0 0% 98%; /* Pearl White */
-    --primary: 274 100% 50%;  /* Electric Violet #8F00FF */
+    --primary: 348 83% 47%;  /* Cherry Red #D2042D */
     --primary-foreground: 0 0% 98%; /* Pearl White for text on primary buttons */
-    --secondary: 240 15% 25%; /* Neutral Dark Grey #363B47 */
-    --secondary-foreground: 0 0% 85%; /* Lighter Grey #D9D9D9 */
-    --muted: 240 10% 18%;     /* Darker Muted #282A30 */
-    --muted-foreground: 240 10% 55%; /* Muted Text #7F8491 */
-    --accent: 274 100% 84%; /* Blush Mauve #E0B0FF */
-    --accent-foreground: 240 60% 7%; /* Dark Navy for text on accent elements */
+    --secondary: 0 100% 25%; /* Burgundy #800000 */
+    --secondary-foreground: 0 0% 98%; /* Pearl White for text on secondary */
+    --muted: 0 0% 18%;     /* Darker Muted Grey #2E2E2E */
+    --muted-foreground: 0 0% 63%; /* Muted Text Grey #A0A0A0 */
+    --accent: 340 70% 73%; /* Light Rose/Pink #E88DAA */
+    --accent-foreground: 0 100% 15%; /* Dark Burgundy for text on accent elements */
     --destructive: 0 70% 50%; /* Brighter red for dark mode */
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 20%;       /* Darker Border #333333 */
     --input: 0 0% 16%;        /* Darker Input #292929 */
-    --ring: 274 100% 65%; /* Lighter violet for focus rings #B366FF */
-    --radius: 1.875rem; /* 30px */
+    --ring: 348 83% 57%; /* Lighter Cherry Red for focus rings */
+    --radius: 1rem; /* Updated radius */
   }
 }
 
