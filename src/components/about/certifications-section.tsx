@@ -10,7 +10,7 @@ export function CertificationsSection() {
       <h2 className="font-headline text-3xl font-semibold text-center text-accent">Certifications</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {CERTIFICATIONS_DATA.map((cert) => (
-          <Card key={cert.name} className="flex flex-col bg-card/80 hover:shadow-md transition-shadow">
+          <Card key={cert.name} className="flex flex-col bg-card/80 transition-shadow">
             <CardHeader className="flex-row items-start gap-4 space-y-0 pb-4">
               <Award className="h-8 w-8 text-primary mt-1" />
               <div>

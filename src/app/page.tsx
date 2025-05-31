@@ -81,7 +81,7 @@ export default function HomePage() {
               linkLabel: 'Read More',
             },
           ].map((item, index) => (
-            <Card key={item.title} className="hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 animate-slide-in-up" style={{animationDelay: `${index * 150}ms`}}>
+            <Card key={item.title} className="transition-shadow duration-300 animate-slide-in-up" style={{animationDelay: `${index * 150}ms`}}>
               <CardHeader className="items-center">
                 {item.icon}
                 <CardTitle className="font-headline text-2xl text-center">{item.title}</CardTitle>

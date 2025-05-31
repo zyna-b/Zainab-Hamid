@@ -24,29 +24,30 @@
     --border: 240 20% 85%;
     --input: 240 20% 90%;
     --ring: 274 100% 50%; /* Electric Violet */
-    --radius: 0.5rem;
+    --radius: 1.875rem; /* 30px */
   }
 
   .dark {
     --background: 240 60% 7%; /* Dark Navy #0A0A23 */
     --foreground: 0 0% 98%; /* Pearl White #FAFAFA */
-    --card: 240 55% 12%; /* Slightly lighter than Dark Navy for cards */
+    --card: 0 0% 13%;       /* #212121 - User's card background */
     --card-foreground: 0 0% 98%; /* Pearl White */
-    --popover: 240 55% 10%; /* Darker than card for popovers */
+    --popover: 0 0% 10%;     /* #1A1A1A - Darker than card for popovers */
     --popover-foreground: 0 0% 98%; /* Pearl White */
-    --primary: 274 100% 60%; /* Electric Violet #8F00FF (adjusted slightly for dark bg) */
+    --primary: 274 100% 50%;  /* Electric Violet #8F00FF */
     --primary-foreground: 0 0% 98%; /* Pearl White for text on primary buttons */
-    --secondary: 240 50% 20%; /* Darker muted blue/grey */
-    --secondary-foreground: 0 0% 90%; /* Lighter grey/white */
-    --muted: 240 50% 15%; /* Even darker muted blue/grey */
-    --muted-foreground: 240 20% 65%; /* Lighter greyish blue for muted text */
+    --secondary: 240 15% 25%; /* Neutral Dark Grey #363B47 */
+    --secondary-foreground: 0 0% 85%; /* Lighter Grey #D9D9D9 */
+    --muted: 240 10% 18%;     /* Darker Muted #282A30 */
+    --muted-foreground: 240 10% 55%; /* Muted Text #7F8491 */
     --accent: 274 100% 84%; /* Blush Mauve #E0B0FF */
     --accent-foreground: 240 60% 7%; /* Dark Navy for text on accent elements */
-    --destructive: 0 70% 55%; /* Slightly adjusted red for dark mode */
+    --destructive: 0 70% 50%; /* Brighter red for dark mode */
     --destructive-foreground: 0 0% 98%;
-    --border: 240 50% 20%; /* Subtle border */
-    --input: 240 50% 15%; /* Input background */
-    --ring: 274 100% 75%; /* Lighter violet for focus rings */
+    --border: 0 0% 20%;       /* Darker Border #333333 */
+    --input: 0 0% 16%;        /* Darker Input #292929 */
+    --ring: 274 100% 65%; /* Lighter violet for focus rings #B366FF */
+    --radius: 1.875rem; /* 30px */
   }
 }
 

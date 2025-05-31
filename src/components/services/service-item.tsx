@@ -8,7 +8,7 @@ interface ServiceItemProps {
 export function ServiceItem({ service }: ServiceItemProps) {
   const Icon = service.icon;
   return (
-    <Card className="h-full text-center hover:shadow-xl hover:shadow-primary/20 transition-shadow duration-300 bg-card/90">
+    <Card className="h-full text-center transition-shadow duration-300 bg-card/90">
       <CardHeader className="items-center pb-4">
         <div className="p-4 bg-primary/10 rounded-full mb-4 inline-block">
           <Icon className="h-10 w-10 text-primary" />

@@ -68,7 +68,7 @@ export function ContactForm() {
 
 
   return (
-    <Card className="w-full max-w-2xl mx-auto shadow-lg border-primary/20">
+    <Card className="w-full max-w-2xl mx-auto border-primary/20">
       <CardHeader className="text-center">
         <CardTitle className="font-headline text-3xl text-primary">Get In Touch</CardTitle>
         <CardDescription>
