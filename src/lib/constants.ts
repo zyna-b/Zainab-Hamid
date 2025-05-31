@@ -1,5 +1,15 @@
 import type { NavItem, Project, Service, Skill, Certification, FAQ } from './types';
-import { Code, Smartphone, Brain, Briefcase, Zap, Palette } from 'lucide-react';
+import { Palette, Zap, Briefcase, Code as LucideCode, Brain as LucideBrain, Smartphone as LucideSmartphone } from 'lucide-react'; // Keep lucide for services for now
+import {
+  PythonIcon, JavaScriptIcon, TypeScriptIcon, JavaIcon, GoIcon, RustIcon,
+  NextjsIcon, ReactIcon, NodejsIcon, AngularIcon, VuejsIcon, TailwindCssIcon, BootstrapIcon,
+  TensorFlowIcon, PyTorchIcon, ScikitLearnIcon, OpenCvIcon, HuggingFaceIcon, LangChainIcon,
+  SqlIcon, PostgreSqlIcon, MySqlIcon, SqliteIcon, MongoDbIcon, FirebaseIcon, SupabaseIcon,
+  GitIcon, DockerIcon, GitHubActionsIcon, KubernetesIcon, PostmanIcon, SwaggerIcon,
+  AwsIcon, GoogleCloudIcon, AzureIcon, HerokuIcon, VercelIcon, NetlifyIcon, RailwayIcon, RenderIcon,
+  KotlinIcon, SwiftIcon, FlutterIcon, ReactNativeIcon
+} from '@/components/icons/tech-icons';
+
 
 export const NAV_ITEMS: NavItem[] = [
   { title: 'Home', href: '/' },
@@ -12,34 +22,75 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const SITE_NAME = "Zainab Hamid";
 export const SITE_DESCRIPTION = "AI Developer, Full-Stack Developer, Mobile App Developer, Software Developer";
-export const EMAIL = "contact@zainabhamid.tech"; // Placeholder
-export const RESUME_LINK = "/placeholder-resume.pdf"; // Placeholder
+export const EMAIL = "contact@zainabhamid.tech"; 
+export const RESUME_LINK = "/placeholder-resume.pdf"; 
 
 export const SOCIAL_LINKS = {
-  github: "https://github.com/zainabhamid", // Placeholder
-  linkedin: "https://linkedin.com/in/zainabhamid", // Placeholder
-  twitter: "https://twitter.com/zainabhamid", // Placeholder
+  github: "https://github.com/zainabhamid", 
+  linkedin: "https://linkedin.com/in/zainabhamid", 
+  twitter: "https://twitter.com/zainabhamid", 
 };
 
 export const SKILLS_DATA: Skill[] = [
-  { name: "Python", icon: Code, category: "Programming Languages" },
-  { name: "JavaScript", icon: Code, category: "Programming Languages" },
-  { name: "TypeScript", icon: Code, category: "Programming Languages" },
-  { name: "Java", icon: Code, category: "Programming Languages" },
-  { name: "Next.js", icon: Zap, category: "Frameworks & Libraries" },
-  { name: "React", icon: Zap, category: "Frameworks & Libraries" },
-  { name: "Node.js", icon: Zap, category: "Frameworks & Libraries" },
-  { name: "TensorFlow", icon: Brain, category: "AI & Machine Learning" },
-  { name: "PyTorch", icon: Brain, category: "AI & Machine Learning" },
-  { name: "Scikit-learn", icon: Brain, category: "AI & Machine Learning" },
-  { name: "SQL", icon: Code, category: "Databases" },
-  { name: "MongoDB", icon: Code, category: "Databases" },
-  { name: "Docker", icon: Zap, category: "DevOps & Tools" },
-  { name: "Git", icon: Zap, category: "DevOps & Tools" },
-  { name: "AWS", icon: Zap, category: "Cloud Platforms" },
-  { name: "Firebase", icon: Zap, category: "Cloud Platforms" },
-  { name: "Swift (iOS)", icon: Smartphone, category: "Mobile Development" },
-  { name: "Kotlin (Android)", icon: Smartphone, category: "Mobile Development" },
+  // Programming Languages
+  { name: "Python", icon: PythonIcon, category: "Programming Languages" },
+  { name: "JavaScript", icon: JavaScriptIcon, category: "Programming Languages" },
+  { name: "TypeScript", icon: TypeScriptIcon, category: "Programming Languages" },
+  { name: "Java", icon: JavaIcon, category: "Programming Languages" },
+  { name: "Go", icon: GoIcon, category: "Programming Languages" },
+  { name: "Rust", icon: RustIcon, category: "Programming Languages" },
+
+  // Frameworks & Libraries
+  { name: "Next.js", icon: NextjsIcon, category: "Frameworks & Libraries" },
+  { name: "React", icon: ReactIcon, category: "Frameworks & Libraries" },
+  { name: "Node.js", icon: NodejsIcon, category: "Frameworks & Libraries" },
+  { name: "Angular", icon: AngularIcon, category: "Frameworks & Libraries" },
+  { name: "Vue.js", icon: VuejsIcon, category: "Frameworks & Libraries" },
+  { name: "Tailwind CSS", icon: TailwindCssIcon, category: "Frameworks & Libraries" },
+  { name: "Bootstrap", icon: BootstrapIcon, category: "Frameworks & Libraries" },
+  
+  // AI & Machine Learning
+  { name: "TensorFlow", icon: TensorFlowIcon, category: "AI & Machine Learning" },
+  { name: "PyTorch", icon: PyTorchIcon, category: "AI & Machine Learning" },
+  { name: "Scikit-learn", icon: ScikitLearnIcon, category: "AI & Machine Learning" },
+  { name: "OpenCV", icon: OpenCvIcon, category: "AI & Machine Learning" },
+  { name: "Hugging Face", icon: HuggingFaceIcon, category: "AI & Machine Learning" },
+  { name: "LangChain", icon: LangChainIcon, category: "AI & Machine Learning" },
+
+  // Databases
+  { name: "SQL", icon: SqlIcon, category: "Databases" },
+  { name: "PostgreSQL", icon: PostgreSqlIcon, category: "Databases" },
+  { name: "MySQL", icon: MySqlIcon, category: "Databases" },
+  { name: "SQLite", icon: SqliteIcon, category: "Databases" },
+  { name: "MongoDB", icon: MongoDbIcon, category: "Databases" },
+  { name: "Firebase RTDB", icon: FirebaseIcon, category: "Databases" },
+  { name: "Firestore", icon: FirebaseIcon, category: "Databases" }, // Re-using FirebaseIcon
+  { name: "Supabase", icon: SupabaseIcon, category: "Databases" },
+
+  // DevOps & Tools
+  { name: "Git", icon: GitIcon, category: "DevOps & Tools" },
+  { name: "Docker", icon: DockerIcon, category: "DevOps & Tools" },
+  { name: "GitHub Actions", icon: GitHubActionsIcon, category: "DevOps & Tools" },
+  { name: "Kubernetes", icon: KubernetesIcon, category: "DevOps & Tools" },
+  { name: "Postman", icon: PostmanIcon, category: "DevOps & Tools" },
+  { name: "Swagger", icon: SwaggerIcon, category: "DevOps & Tools" },
+
+  // Cloud Platforms
+  { name: "AWS", icon: AwsIcon, category: "Cloud Platforms" },
+  { name: "Firebase", icon: FirebaseIcon, category: "Cloud Platforms" }, // Re-using FirebaseIcon
+  { name: "Google Cloud", icon: GoogleCloudIcon, category: "Cloud Platforms" },
+  { name: "Microsoft Azure", icon: AzureIcon, category: "Cloud Platforms" },
+  { name: "Heroku", icon: HerokuIcon, category: "Cloud Platforms" },
+  { name: "Vercel", icon: VercelIcon, category: "Cloud Platforms" },
+  { name: "Netlify", icon: NetlifyIcon, category: "Cloud Platforms" },
+  { name: "Railway", icon: RailwayIcon, category: "Cloud Platforms" },
+  { name: "Render", icon: RenderIcon, category: "Cloud Platforms" },
+
+  // Mobile Development
+  { name: "Kotlin (Android)", icon: KotlinIcon, category: "Mobile Development" },
+  { name: "Swift (iOS)", icon: SwiftIcon, category: "Mobile Development" },
+  { name: "Flutter", icon: FlutterIcon, category: "Mobile Development" },
+  { name: "React Native", icon: ReactNativeIcon, category: "Mobile Development" },
 ];
 
 export const CERTIFICATIONS_DATA: Certification[] = [
@@ -123,19 +174,19 @@ export const SERVICES_DATA: Service[] = [
     id: "service-1",
     title: "Custom AI Solutions",
     description: "Leverage the power of AI with bespoke solutions including machine learning models, NLP, computer vision, and predictive analytics to solve your unique business challenges.",
-    icon: Brain,
+    icon: LucideBrain,
   },
   {
     id: "service-2",
     title: "Full-Stack Web Development",
     description: "End-to-end web application development, from intuitive front-end interfaces with React/Next.js to robust back-end systems using Node.js, Python, or Java.",
-    icon: Code,
+    icon: LucideCode,
   },
   {
     id: "service-3",
     title: "Mobile App Development",
     description: "Cross-platform and native mobile app development for iOS and Android, focusing on user experience, performance, and scalability.",
-    icon: Smartphone,
+    icon: LucideSmartphone,
   },
   {
     id: "service-4",
@@ -205,3 +256,5 @@ export const FAQS_DATA: FAQ[] = [
     answer: "I follow an agile methodology, starting with understanding the requirements, followed by iterative design, development, testing, and deployment. Communication and collaboration are key throughout the process."
   }
 ];
+
+    
