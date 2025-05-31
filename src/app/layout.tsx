@@ -30,7 +30,7 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased dark', // Changed from font-body to font-sans
+          'min-h-screen bg-background font-sans antialiased dark', // Ensure font-sans is primary
           fontPoppins.variable // Applies the --font-poppins CSS variable to the body
         )}
       >

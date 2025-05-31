@@ -1,5 +1,5 @@
 import type {Config} from 'tailwindcss';
-import defaultTheme from 'tailwindcss/defaultTheme'; // Added import for defaultTheme
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
   darkMode: ['class'],
@@ -83,7 +83,7 @@ export default {
         md: 'calc(var(--radius) - 0.25rem)', // effectively 0.75rem
         sm: 'calc(var(--radius) - 0.5rem)', // effectively 0.5rem
       },
-      boxShadow: { // Keep existing shadows and potentially add new ones if needed
+      boxShadow: {
         sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
         DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
         md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
