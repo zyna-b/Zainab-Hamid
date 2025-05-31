@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <SectionWrapper className="pt-24 md:pt-32 pb-20 md:pb-28 bg-gradient-to-br from-background to-primary/5">
+      <SectionWrapper className="pt-24 md:pt-32 pb-20 md:pb-28">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-up space-y-6">
             <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-bold text-primary">
@@ -35,16 +35,16 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-            <div className="hidden md:flex justify-center animate-fade-in animation-delay-300">
+          <div className="hidden md:flex justify-center items-center relative z-10 animate-fade-in animation-delay-300 bg-transparent">
             <Image
-              src="/src/lib/images/zainab.jpg"
+              src="/images/zainab.jpg"
               alt="Zainab Hamid"
               width={500}
               height={500}
               className="rounded-full shadow-2xl border-4 border-primary/50 object-cover"
               priority
             />
-            </div>
+          </div>
         </div>
       </SectionWrapper>
 

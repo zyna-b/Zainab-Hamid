@@ -6,7 +6,7 @@ export function ProfileSection() {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
       <div className="md:col-span-1 flex justify-center">
         <Image
-          src="/src/lib/images/zainab-side.png"
+          src="/images/zainab-side.png"
           alt={`${SITE_NAME} - Professional Portrait`}
           width={400}
           height={500}
