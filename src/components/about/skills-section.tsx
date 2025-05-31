@@ -12,7 +12,7 @@ export function SkillsSection() {
       {categories.map(category => (
         <div key={category} className="mb-10">
           <h3 className="font-headline text-2xl font-medium mb-6 text-primary/90 border-b-2 border-primary/30 pb-2">{category}</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {SKILLS_DATA.filter(skill => skill.category === category).map((skill) => (
               <Card key={skill.name} className="text-center transition-shadow bg-card/80 hover:border-accent/50">
                 <CardHeader className="pb-2 pt-4">

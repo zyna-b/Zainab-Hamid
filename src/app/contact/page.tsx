@@ -12,7 +12,7 @@ import { Separator } from '@/components/ui/separator';
 export default function ContactPage() {
   return (
     <>
-      <SectionWrapper className="pb-8 md:pb-12">
+      <SectionWrapper className="pb-12 md:pb-16">
         <PageHeader
           title="Contact Me"
           subtitle="Let's connect! Whether you have a project idea, a question, or just want to chat, feel free to reach out."
@@ -20,7 +20,7 @@ export default function ContactPage() {
         <ContactForm />
       </SectionWrapper>
       
-      <SectionWrapper className="py-8 md:py-12 bg-background/95">
+      <SectionWrapper className="py-12 md:py-16 bg-background/95">
         <div className="text-center max-w-2xl mx-auto">
             <h3 className="font-headline text-2xl font-semibold text-accent mb-6">Connect via Social Media or Email</h3>
             <p className="text-muted-foreground mb-6">
@@ -59,7 +59,7 @@ export default function ContactPage() {
       
       <Separator className="my-0" />
 
-      <SectionWrapper className="pt-8 md:pt-12">
+      <SectionWrapper className="pt-12 md:pt-16">
         <FaqSection />
       </SectionWrapper>
     </>

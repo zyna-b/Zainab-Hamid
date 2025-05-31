@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <SectionWrapper className="pt-20 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-background to-primary/5">
+      <SectionWrapper className="pt-24 md:pt-32 pb-20 md:pb-28 bg-gradient-to-br from-background to-primary/5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-up space-y-6">
             <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-bold text-primary">

@@ -9,7 +9,7 @@ interface SectionWrapperProps extends HTMLAttributes<HTMLElement> {
 
 export function SectionWrapper({ children, className, as: Component = 'section', ...props }: SectionWrapperProps) {
   return (
-    <Component className={cn('container py-12 md:py-20 animate-fade-in', className)} {...props}>
+    <Component className={cn('container py-16 md:py-24 animate-fade-in', className)} {...props}>
       {children}
     </Component>
   );
