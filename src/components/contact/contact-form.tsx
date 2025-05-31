@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -37,7 +38,7 @@ export function ContactForm() {
   const { toast } = useToast();
   
   const initialState: ContactFormState = { message: "", success: false };
-  const [state, formAction] = useFormState(sendEmail, initialState);
+  const [state, formAction] = useActionState(sendEmail, initialState);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -62,7 +63,6 @@ export function ContactForm() {
     }
   }, [state, toast, form]);
   
-  // For client-side errors display under fields. Server errors are shown via toast.
   const { errors: clientErrors } = form.formState;
   const serverErrors = state.errors;
 

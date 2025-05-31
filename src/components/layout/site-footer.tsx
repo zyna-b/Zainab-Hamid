@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Linkedin, Twitter, Code } from 'lucide-react';
+import { Github, Linkedin, Mail, Code } from 'lucide-react'; // Added Mail
 import { SITE_NAME, SOCIAL_LINKS, EMAIL } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 
@@ -33,13 +33,13 @@ export function SiteFooter() {
                 </Link>
               </Button>
             )}
-            {SOCIAL_LINKS.twitter && (
-              <Button variant="ghost" size="icon" asChild>
-                <Link href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                  <Twitter className="h-5 w-5" />
-                </Link>
-              </Button>
-            )}
+            {/* Twitter link is removed via SOCIAL_LINKS.twitter being null */}
+            {/* Add Email icon here */}
+            <Button variant="ghost" size="icon" asChild>
+              <Link href={`mailto:${EMAIL}`} aria-label="Email">
+                <Mail className="h-5 w-5" />
+              </Link>
+            </Button>
           </div>
 
           <div className="text-center md:text-right text-sm text-muted-foreground">
