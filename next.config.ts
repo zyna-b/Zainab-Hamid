@@ -23,7 +23,6 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       }
     ],
-    favicon: '/src/lib/images/favicon.ico',
   },
 };
 
