@@ -35,16 +35,16 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="hidden md:flex justify-center animate-fade-in animation-delay-300">
+            <div className="hidden md:flex justify-center animate-fade-in animation-delay-300">
             <Image
-              src="https://firebasestudio.googleapis.com/v0/b/app-prototyper-1234.appspot.com/o/user%2Fclw83cbkh000c3c9qzz5140q3%2F7bfa72f1-c880-47ed-bb35-494b454389fc.png?alt=media&token=5c0a1013-1c69-43e1-869a-3195d99cc367"
+              src="/src/lib/images/zainab.jpg"
               alt="Zainab Hamid"
               width={500}
               height={500}
               className="rounded-full shadow-2xl border-4 border-primary/50 object-cover"
               priority
             />
-          </div>
+            </div>
         </div>
       </SectionWrapper>
 
