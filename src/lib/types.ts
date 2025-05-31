@@ -32,7 +32,7 @@ export type Service = {
 
 export type Skill = {
   name: string;
-  icon: LucideIcon;
+  // icon property removed
   category: string;
 };
 

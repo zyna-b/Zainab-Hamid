@@ -1,15 +1,6 @@
-import type { NavItem, Project, Service, Skill, Certification, FAQ } from './types';
-import { Palette, Zap, Briefcase, Code as LucideCode, Brain as LucideBrain, Smartphone as LucideSmartphone } from 'lucide-react'; // Keep lucide for services for now
-import {
-  PythonIcon, JavaScriptIcon, TypeScriptIcon, JavaIcon, GoIcon, RustIcon,
-  NextjsIcon, ReactIcon, NodejsIcon, AngularIcon, VuejsIcon, TailwindCssIcon, BootstrapIcon,
-  TensorFlowIcon, PyTorchIcon, ScikitLearnIcon, OpenCvIcon, HuggingFaceIcon, LangChainIcon,
-  SqlIcon, PostgreSqlIcon, MySqlIcon, SqliteIcon, MongoDbIcon, FirebaseIcon, SupabaseIcon,
-  GitIcon, DockerIcon, GitHubActionsIcon, KubernetesIcon, PostmanIcon, SwaggerIcon,
-  AwsIcon, GoogleCloudIcon, AzureIcon, HerokuIcon, VercelIcon, NetlifyIcon, RailwayIcon, RenderIcon,
-  KotlinIcon, SwiftIcon, FlutterIcon, ReactNativeIcon
-} from '@/components/icons/tech-icons';
-
+import type { NavItem, Project, Service, Skill, Certification, FAQ, AIExperiment } from './types';
+import { Palette, Zap, Briefcase, Code as LucideCode, Brain as LucideBrain, Smartphone as LucideSmartphone } from 'lucide-react';
+// Removed tech icon imports as they are no longer used for skills
 
 export const NAV_ITEMS: NavItem[] = [
   { title: 'Home', href: '/' },
@@ -32,65 +23,65 @@ export const SOCIAL_LINKS = {
 };
 
 export const SKILLS_DATA: Skill[] = [
-  // Programming Languages
-  { name: "Python", icon: PythonIcon, category: "Programming Languages" },
-  { name: "JavaScript", icon: JavaScriptIcon, category: "Programming Languages" },
-  { name: "TypeScript", icon: TypeScriptIcon, category: "Programming Languages" },
-  { name: "Java", icon: JavaIcon, category: "Programming Languages" },
-  { name: "Go", icon: GoIcon, category: "Programming Languages" },
-  { name: "Rust", icon: RustIcon, category: "Programming Languages" },
+  // Programming Languages - Icon property removed
+  { name: "Python", category: "Programming Languages" },
+  { name: "JavaScript", category: "Programming Languages" },
+  { name: "TypeScript", category: "Programming Languages" },
+  { name: "Java", category: "Programming Languages" },
+  { name: "Go", category: "Programming Languages" },
+  { name: "Rust", category: "Programming Languages" },
 
   // Frameworks & Libraries
-  { name: "Next.js", icon: NextjsIcon, category: "Frameworks & Libraries" },
-  { name: "React", icon: ReactIcon, category: "Frameworks & Libraries" },
-  { name: "Node.js", icon: NodejsIcon, category: "Frameworks & Libraries" },
-  { name: "Angular", icon: AngularIcon, category: "Frameworks & Libraries" },
-  { name: "Vue.js", icon: VuejsIcon, category: "Frameworks & Libraries" },
-  { name: "Tailwind CSS", icon: TailwindCssIcon, category: "Frameworks & Libraries" },
-  { name: "Bootstrap", icon: BootstrapIcon, category: "Frameworks & Libraries" },
+  { name: "Next.js", category: "Frameworks & Libraries" },
+  { name: "React", category: "Frameworks & Libraries" },
+  { name: "Node.js", category: "Frameworks & Libraries" },
+  { name: "Angular", category: "Frameworks & Libraries" },
+  { name: "Vue.js", category: "Frameworks & Libraries" },
+  { name: "Tailwind CSS", category: "Frameworks & Libraries" },
+  { name: "Bootstrap", category: "Frameworks & Libraries" },
   
   // AI & Machine Learning
-  { name: "TensorFlow", icon: TensorFlowIcon, category: "AI & Machine Learning" },
-  { name: "PyTorch", icon: PyTorchIcon, category: "AI & Machine Learning" },
-  { name: "Scikit-learn", icon: ScikitLearnIcon, category: "AI & Machine Learning" },
-  { name: "OpenCV", icon: OpenCvIcon, category: "AI & Machine Learning" },
-  { name: "Hugging Face", icon: HuggingFaceIcon, category: "AI & Machine Learning" },
-  { name: "LangChain", icon: LangChainIcon, category: "AI & Machine Learning" },
+  { name: "TensorFlow", category: "AI & Machine Learning" },
+  { name: "PyTorch", category: "AI & Machine Learning" },
+  { name: "Scikit-learn", category: "AI & Machine Learning" },
+  { name: "OpenCV", category: "AI & Machine Learning" },
+  { name: "Hugging Face Transformers", category: "AI & Machine Learning" },
+  { name: "LangChain", category: "AI & Machine Learning" },
 
   // Databases
-  { name: "SQL", icon: SqlIcon, category: "Databases" },
-  { name: "PostgreSQL", icon: PostgreSqlIcon, category: "Databases" },
-  { name: "MySQL", icon: MySqlIcon, category: "Databases" },
-  { name: "SQLite", icon: SqliteIcon, category: "Databases" },
-  { name: "MongoDB", icon: MongoDbIcon, category: "Databases" },
-  { name: "Firebase RTDB", icon: FirebaseIcon, category: "Databases" },
-  { name: "Firestore", icon: FirebaseIcon, category: "Databases" }, // Re-using FirebaseIcon
-  { name: "Supabase", icon: SupabaseIcon, category: "Databases" },
+  { name: "SQL", category: "Databases" },
+  { name: "PostgreSQL", category: "Databases" },
+  { name: "MySQL", category: "Databases" },
+  { name: "SQLite", category: "Databases" },
+  { name: "MongoDB", category: "Databases" },
+  { name: "Firebase Realtime DB", category: "Databases" },
+  { name: "Firestore", category: "Databases" },
+  { name: "Supabase", category: "Databases" },
 
   // DevOps & Tools
-  { name: "Git", icon: GitIcon, category: "DevOps & Tools" },
-  { name: "Docker", icon: DockerIcon, category: "DevOps & Tools" },
-  { name: "GitHub Actions", icon: GitHubActionsIcon, category: "DevOps & Tools" },
-  { name: "Kubernetes", icon: KubernetesIcon, category: "DevOps & Tools" },
-  { name: "Postman", icon: PostmanIcon, category: "DevOps & Tools" },
-  { name: "Swagger", icon: SwaggerIcon, category: "DevOps & Tools" },
+  { name: "Git", category: "DevOps & Tools" },
+  { name: "Docker", category: "DevOps & Tools" },
+  { name: "GitHub Actions", category: "DevOps & Tools" },
+  { name: "Kubernetes", category: "DevOps & Tools" },
+  { name: "Postman", category: "DevOps & Tools" },
+  { name: "Swagger", category: "DevOps & Tools" },
 
   // Cloud Platforms
-  { name: "AWS", icon: AwsIcon, category: "Cloud Platforms" },
-  { name: "Firebase", icon: FirebaseIcon, category: "Cloud Platforms" }, // Re-using FirebaseIcon
-  { name: "Google Cloud", icon: GoogleCloudIcon, category: "Cloud Platforms" },
-  { name: "Microsoft Azure", icon: AzureIcon, category: "Cloud Platforms" },
-  { name: "Heroku", icon: HerokuIcon, category: "Cloud Platforms" },
-  { name: "Vercel", icon: VercelIcon, category: "Cloud Platforms" },
-  { name: "Netlify", icon: NetlifyIcon, category: "Cloud Platforms" },
-  { name: "Railway", icon: RailwayIcon, category: "Cloud Platforms" },
-  { name: "Render", icon: RenderIcon, category: "Cloud Platforms" },
+  { name: "AWS", category: "Cloud Platforms" },
+  { name: "Firebase", category: "Cloud Platforms" },
+  { name: "Google Cloud Platform", category: "Cloud Platforms" },
+  { name: "Microsoft Azure", category: "Cloud Platforms" },
+  { name: "Heroku", category: "Cloud Platforms" },
+  { name: "Vercel", category: "Cloud Platforms" },
+  { name: "Netlify", category: "Cloud Platforms" },
+  { name: "Railway", category: "Cloud Platforms" },
+  { name: "Render", category: "Cloud Platforms" },
 
   // Mobile Development
-  { name: "Kotlin (Android)", icon: KotlinIcon, category: "Mobile Development" },
-  { name: "Swift (iOS)", icon: SwiftIcon, category: "Mobile Development" },
-  { name: "Flutter", icon: FlutterIcon, category: "Mobile Development" },
-  { name: "React Native", icon: ReactNativeIcon, category: "Mobile Development" },
+  { name: "Kotlin (Android)", category: "Mobile Development" },
+  { name: "Swift (iOS)", category: "Mobile Development" },
+  { name: "Flutter", category: "Mobile Development" },
+  { name: "React Native", category: "Mobile Development" },
 ];
 
 export const CERTIFICATIONS_DATA: Certification[] = [
@@ -208,7 +199,7 @@ export const SERVICES_DATA: Service[] = [
   },
 ];
 
-export const AI_EXPERIMENTS_DATA = [
+export const AI_EXPERIMENTS_DATA: AIExperiment[] = [
   {
     id: "exp-1",
     title: "Real-time Object Detection",
@@ -256,5 +247,3 @@ export const FAQS_DATA: FAQ[] = [
     answer: "I follow an agile methodology, starting with understanding the requirements, followed by iterative design, development, testing, and deployment. Communication and collaboration are key throughout the process."
   }
 ];
-
-    
