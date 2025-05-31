@@ -1,3 +1,4 @@
+
 import type { NavItem, Project, Service, Skill, Certification, FAQ, AIExperiment, Experience } from './types';
 import { Palette, Zap, Briefcase, Code as LucideCode, Brain as LucideBrain, Smartphone as LucideSmartphone } from 'lucide-react';
 
@@ -12,13 +13,13 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const SITE_NAME = "Zainab Hamid";
 export const SITE_DESCRIPTION = "Chief Developer & AI Engineer";
-export const EMAIL = "contact@zainabhamid.tech"; 
+export const EMAIL = "zainabhamid2468@gmail.com"; 
 export const RESUME_LINK = "/placeholder-resume.pdf"; 
 
 export const SOCIAL_LINKS = {
-  github: "https://github.com/zainabhamid", 
-  linkedin: "https://linkedin.com/in/zainabhamid", 
-  twitter: "https://twitter.com/zainabhamid", 
+  github: "https://github.com/zyna-b", 
+  linkedin: "https://www.linkedin.com/in/zainab-hamid-187a18321/", 
+  twitter: null, // Or an empty string if preferred: ""
 };
 
 export const EXPERIENCE_DATA: Experience[] = [
@@ -258,3 +259,6 @@ export const FAQS_DATA: FAQ[] = [
     answer: "I follow an agile methodology, starting with understanding the requirements, followed by iterative design, development, testing, and deployment. Communication and collaboration are key throughout the process."
   }
 ];
+
+
+    
