@@ -3,7 +3,7 @@ import { SITE_NAME } from '@/lib/constants';
 
 export function ProfileSection() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
       <div className="md:col-span-1 flex justify-center">
         <Image
           src="https://placehold.co/400x500.png"
