@@ -1,15 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter, Poppins } from 'next/font/google';
+import { Poppins } from 'next/font/google'; // Removed Inter
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SiteFooter } from '@/components/layout/site-footer';
 import { Toaster } from "@/components/ui/toaster";
 
-const fontInter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-});
+// Removed Inter font setup
 
 const fontPoppins = Poppins({
   subsets: ['latin'],
@@ -35,9 +32,8 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          'min-h-screen bg-background font-body antialiased dark', // Apply dark class by default
-          fontInter.variable,
-          fontPoppins.variable
+          'min-h-screen bg-background font-body antialiased dark', // font-body will now use Poppins from tailwind.config.ts
+          fontPoppins.variable // Ensure Poppins variable is available
         )}
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
