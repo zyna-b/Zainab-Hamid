@@ -1,4 +1,5 @@
 import type {Config} from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme'; // Added import for defaultTheme
 
 export default {
   darkMode: ['class'],
@@ -17,9 +18,13 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Poppins', 'sans-serif'], // Changed from Inter to Poppins
-        headline: ['Poppins', 'sans-serif'],
-        code: ['monospace'],
+        // Poppins is loaded via Next/font and available as var(--font-poppins)
+        // Set 'sans' to use this variable, then 'Poppins' by name, then Tailwind's default sans-serif stack.
+        sans: ['var(--font-poppins)', 'Poppins', ...defaultTheme.fontFamily.sans],
+        // Headlines will also use the same Poppins-based sans-serif stack.
+        headline: ['var(--font-poppins)', 'Poppins', ...defaultTheme.fontFamily.sans],
+        // Code will use Tailwind's default monospace stack for readability.
+        code: defaultTheme.fontFamily.mono,
       },
       colors: {
         background: 'hsl(var(--background))',
