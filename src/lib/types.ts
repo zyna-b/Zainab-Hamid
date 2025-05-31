@@ -32,7 +32,6 @@ export type Service = {
 
 export type Skill = {
   name: string;
-  // icon property removed
   category: string;
 };
 
@@ -41,6 +40,14 @@ export type Certification = {
   issuer: string;
   date: string;
   link?: string;
+};
+
+export type Experience = {
+  role: string;
+  company: string;
+  location: string;
+  date: string;
+  description: string[];
 };
 
 export type FAQ = {

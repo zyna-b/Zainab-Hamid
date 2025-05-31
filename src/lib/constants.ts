@@ -1,6 +1,5 @@
-import type { NavItem, Project, Service, Skill, Certification, FAQ, AIExperiment } from './types';
+import type { NavItem, Project, Service, Skill, Certification, FAQ, AIExperiment, Experience } from './types';
 import { Palette, Zap, Briefcase, Code as LucideCode, Brain as LucideBrain, Smartphone as LucideSmartphone } from 'lucide-react';
-// Removed tech icon imports as they are no longer used for skills
 
 export const NAV_ITEMS: NavItem[] = [
   { title: 'Home', href: '/' },
@@ -12,7 +11,7 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const SITE_NAME = "Zainab Hamid";
-export const SITE_DESCRIPTION = "AI Developer, Full-Stack Developer, Mobile App Developer, Software Developer";
+export const SITE_DESCRIPTION = "Chief Developer & AI Engineer";
 export const EMAIL = "contact@zainabhamid.tech"; 
 export const RESUME_LINK = "/placeholder-resume.pdf"; 
 
@@ -22,16 +21,36 @@ export const SOCIAL_LINKS = {
   twitter: "https://twitter.com/zainabhamid", 
 };
 
+export const EXPERIENCE_DATA: Experience[] = [
+  {
+    role: "Chief Developer",
+    company: "Technologistics.pk",
+    location: "Lahore, Pakistan",
+    date: "Nov 2024 – Present",
+    description: [
+      "Leads front-end and back-end development of scalable and performant web applications.",
+      "Focuses on cross-functional collaboration, UX optimization, and ensuring responsiveness and load efficiency across devices."
+    ]
+  },
+  {
+    role: "Head of Events – AI Society",
+    company: "The Superior University",
+    location: "Pakistan",
+    date: "Feb 2025 – Present",
+    description: [
+      "Leads AI-centered workshops, knowledge sessions, and tech events.",
+      "First initiative includes a Python & AI fundamentals training series aimed at beginners."
+    ]
+  }
+];
+
 export const SKILLS_DATA: Skill[] = [
-  // Programming Languages - Icon property removed
   { name: "Python", category: "Programming Languages" },
   { name: "JavaScript", category: "Programming Languages" },
   { name: "TypeScript", category: "Programming Languages" },
   { name: "Java", category: "Programming Languages" },
   { name: "Go", category: "Programming Languages" },
   { name: "Rust", category: "Programming Languages" },
-
-  // Frameworks & Libraries
   { name: "Next.js", category: "Frameworks & Libraries" },
   { name: "React", category: "Frameworks & Libraries" },
   { name: "Node.js", category: "Frameworks & Libraries" },
@@ -39,16 +58,12 @@ export const SKILLS_DATA: Skill[] = [
   { name: "Vue.js", category: "Frameworks & Libraries" },
   { name: "Tailwind CSS", category: "Frameworks & Libraries" },
   { name: "Bootstrap", category: "Frameworks & Libraries" },
-  
-  // AI & Machine Learning
   { name: "TensorFlow", category: "AI & Machine Learning" },
   { name: "PyTorch", category: "AI & Machine Learning" },
   { name: "Scikit-learn", category: "AI & Machine Learning" },
   { name: "OpenCV", category: "AI & Machine Learning" },
   { name: "Hugging Face Transformers", category: "AI & Machine Learning" },
   { name: "LangChain", category: "AI & Machine Learning" },
-
-  // Databases
   { name: "SQL", category: "Databases" },
   { name: "PostgreSQL", category: "Databases" },
   { name: "MySQL", category: "Databases" },
@@ -57,16 +72,12 @@ export const SKILLS_DATA: Skill[] = [
   { name: "Firebase Realtime DB", category: "Databases" },
   { name: "Firestore", category: "Databases" },
   { name: "Supabase", category: "Databases" },
-
-  // DevOps & Tools
   { name: "Git", category: "DevOps & Tools" },
   { name: "Docker", category: "DevOps & Tools" },
   { name: "GitHub Actions", category: "DevOps & Tools" },
   { name: "Kubernetes", category: "DevOps & Tools" },
   { name: "Postman", category: "DevOps & Tools" },
   { name: "Swagger", category: "DevOps & Tools" },
-
-  // Cloud Platforms
   { name: "AWS", category: "Cloud Platforms" },
   { name: "Firebase", category: "Cloud Platforms" },
   { name: "Google Cloud Platform", category: "Cloud Platforms" },
@@ -76,8 +87,6 @@ export const SKILLS_DATA: Skill[] = [
   { name: "Netlify", category: "Cloud Platforms" },
   { name: "Railway", category: "Cloud Platforms" },
   { name: "Render", category: "Cloud Platforms" },
-
-  // Mobile Development
   { name: "Kotlin (Android)", category: "Mobile Development" },
   { name: "Swift (iOS)", category: "Mobile Development" },
   { name: "Flutter", category: "Mobile Development" },
@@ -85,10 +94,12 @@ export const SKILLS_DATA: Skill[] = [
 ];
 
 export const CERTIFICATIONS_DATA: Certification[] = [
-  { name: "Google Certified Professional Cloud Architect", issuer: "Google Cloud", date: "2023", link: "#" },
-  { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "2022", link: "#" },
-  { name: "Deep Learning Specialization", issuer: "Coursera (deeplearning.ai)", date: "2021", link: "#" },
-  { name: "Full-Stack Web Development Nanodegree", issuer: "Udacity", date: "2020", link: "#" },
+  { name: "Foundations of SQL & Database Querying", issuer: "Sololearn", date: "May 2025", link: "#" },
+  { name: "CV Writing Workshop", issuer: "The Superior University", date: "Jan 2025", link: "#" },
+  { name: "Introduction to Python", issuer: "Coursera", date: "Date not specified", link: "#" },
+  { name: "AI For Everyone", issuer: "DeepLearning.AI", date: "Date not specified", link: "#" },
+  { name: "Responsive Web Design", issuer: "freeCodeCamp", date: "Date not specified", link: "#" },
+  { name: "JavaScript Essentials", issuer: "LinkedIn Learning", date: "Date not specified", link: "#" }
 ];
 
 export const PROJECTS_DATA: Project[] = [

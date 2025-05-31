@@ -9,13 +9,13 @@ import { Toaster } from "@/components/ui/toaster";
 const fontPoppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins', // This CSS variable is used in tailwind.config.ts
+  variable: '--font-poppins', 
 });
 
 export const metadata: Metadata = {
-  title: 'Zainab Hamid | AI & Full-Stack Developer',
-  description: 'Portfolio of Zainab Hamid, an AI Developer, full-stack developer, mobile app developer, and software developer.',
-  keywords: "AI Developer, Full-Stack Developer, Mobile App Developer, Software Developer, Portfolio, Zainab Hamid",
+  title: 'Zainab Hamid | Chief Developer & AI Engineer',
+  description: 'Portfolio of Zainab Hamid, a Chief Developer and AI Engineer specializing in web, mobile, software, and AI solutions.',
+  keywords: "Chief Developer, AI Engineer, Web Developer, Mobile App Developer, Software Developer, Portfolio, Zainab Hamid, Artificial Intelligence",
 };
 
 export default function RootLayout({
@@ -26,12 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Standard Next.js font optimization handles link preconnects */}
       </head>
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased dark', // Ensure font-sans is primary
-          fontPoppins.variable // Applies the --font-poppins CSS variable to the body
+          'min-h-screen bg-background font-sans antialiased dark', 
+          fontPoppins.variable 
         )}
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
