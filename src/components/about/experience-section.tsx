@@ -7,7 +7,9 @@ export async function ExperienceSection() {
 
   return (
     <div className="space-y-10">
-      <h2 className="font-headline text-3xl font-semibold text-center text-accent">Professional Experience</h2>
+      <h2 className="font-headline text-3xl font-semibold text-center text-accent sm:text-4xl">
+        Professional Experience
+      </h2>
       <div className="space-y-6">
         {experiences.length === 0 && (
           <p className="text-center text-muted-foreground">
@@ -15,29 +17,34 @@ export async function ExperienceSection() {
           </p>
         )}
         {experiences.map((exp, index) => (
-          <Card key={index} className="bg-card/90 transition-shadow duration-300 hover:shadow-primary/10">
-            <CardHeader className="pb-3">
-              <div className="flex flex-col sm:flex-row sm:items-start sm:gap-4">
-                <div className="mb-3 sm:mb-0 flex-shrink-0 flex items-center">
-                  <div className="p-3 bg-primary/10 rounded-md mr-4 inline-block">
+          <Card
+            key={index}
+            className="overflow-hidden bg-card/90 transition-shadow duration-300 hover:shadow-primary/20"
+          >
+            <CardHeader className="gap-4 pb-3 sm:pb-4">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
+                  <div className="flex items-center justify-center rounded-lg bg-primary/10 p-3 shadow-sm">
                     <Briefcase className="h-7 w-7 text-primary" />
                   </div>
-                  <div>
-                    <CardTitle className="font-headline text-xl md:text-2xl">{exp.role}</CardTitle>
-                    <CardDescription className="text-base text-muted-foreground">
+                  <div className="text-center sm:text-left">
+                    <CardTitle className="font-headline text-xl sm:text-2xl">
+                      {exp.role}
+                    </CardTitle>
+                    <CardDescription className="text-sm text-muted-foreground sm:text-base">
                       {exp.company} | {exp.location}
                     </CardDescription>
                   </div>
                 </div>
-                <CardDescription className="text-sm text-muted-foreground/90 sm:ml-auto sm:text-right pt-1">
+                <CardDescription className="text-sm font-medium text-muted-foreground/90 text-center sm:text-right">
                   {exp.date}
                 </CardDescription>
               </div>
             </CardHeader>
-            <CardContent className="pt-0 sm:pl-[calc(1.5rem_+_3rem)]"> {/* Adjusted padding to align with text part of header */}
-              <ul className="list-disc space-y-1.5 text-sm text-foreground/80 pl-5 leading-relaxed">
+            <CardContent className="px-6 pb-6 pt-0 sm:pt-2">
+              <ul className="list-disc space-y-2 text-sm text-foreground/80 sm:text-base">
                 {exp.description.map((desc, i) => (
-                  <li key={i}>{desc}</li>
+                  <li key={i} className="ml-5">{desc}</li>
                 ))}
               </ul>
             </CardContent>

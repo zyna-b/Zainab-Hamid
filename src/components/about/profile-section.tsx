@@ -24,36 +24,46 @@ export function ProfileSection({ about, name }: ProfileSectionProps) {
   const closingParagraph = about.closingParagraph?.trim();
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
-      <div className="md:col-span-1 flex justify-center">
-        <div className="relative">
-          <div className="absolute -inset-1 rounded-lg bg-primary/30 blur-xl"></div>
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-12 items-center">
+      <div className="lg:col-span-1 flex justify-center">
+        <div className="relative w-full max-w-[18rem] sm:max-w-sm md:max-w-md">
+          <div className="absolute -inset-1 rounded-xl bg-primary/25 blur-2xl"></div>
           <Image
             src={imageSrc}
             alt={imageAlt}
             width={400}
             height={500}
-            className="rounded-lg shadow-xl object-cover border-2 border-primary/30 relative z-10"
+            sizes="(max-width: 1024px) 80vw, 400px"
+            className="relative z-10 h-auto w-full rounded-xl border-2 border-primary/30 object-cover shadow-xl"
+            priority
           />
         </div>
       </div>
-      <div className="md:col-span-2 space-y-6">
-        <h2 className="font-headline text-3xl font-semibold text-accent">{storyHeading}</h2>
+      <div className="space-y-6 text-center lg:col-span-2 lg:text-left">
+        <h2 className="font-headline text-3xl font-semibold text-accent sm:text-4xl">{storyHeading}</h2>
         {storyParagraphs.map((paragraph, index) => (
-          <p key={`story-${index}`} className="text-foreground/80 leading-relaxed text-justify">
+          <p
+            key={`story-${index}`}
+            className="text-base leading-relaxed text-foreground/80 sm:text-lg lg:text-justify"
+          >
             {paragraph}
           </p>
         ))}
 
-        <h3 className="font-headline text-2xl font-semibold text-accent pt-4">{expertiseHeading}</h3>
+        <h3 className="font-headline text-2xl font-semibold text-accent pt-2 sm:pt-4">{expertiseHeading}</h3>
         {expertiseParagraphs.map((paragraph, index) => (
-          <p key={`expertise-${index}`} className="text-foreground/80 leading-relaxed text-justify">
+          <p
+            key={`expertise-${index}`}
+            className="text-base leading-relaxed text-foreground/80 sm:text-lg lg:text-justify"
+          >
             {paragraph}
           </p>
         ))}
 
         {closingParagraph && (
-          <p className="text-foreground/80 leading-relaxed text-justify">{closingParagraph}</p>
+          <p className="text-base leading-relaxed text-foreground/80 sm:text-lg lg:text-justify">
+            {closingParagraph}
+          </p>
         )}
       </div>
     </div>

@@ -1,8 +1,9 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
-import { ADMIN_SESSION_COOKIE_NAME } from '@/lib/auth';
 import { fingerprintFromHeaders, validateSessionTokenOnEdge } from '@/lib/auth-middleware';
+
+const ADMIN_SESSION_COOKIE_NAME = 'zh_admin_session';
 
 function buildRedirectUrl(request: NextRequest, pathname: string) {
   const url = request.nextUrl.clone();
