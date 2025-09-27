@@ -6,8 +6,14 @@ import { SkillsSection } from '@/components/about/skills-section';
 import { CertificationsSection } from '@/components/about/certifications-section';
 import { ResumeButton } from '@/components/about/resume-button';
 import { Separator } from '@/components/ui/separator';
+import { getSiteContent } from '@/lib/data-store';
+import { SITE_NAME } from '@/lib/constants';
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const site = await getSiteContent();
+  const about = site.about;
+  const displayName = site.hero?.name ?? SITE_NAME;
+
   return (
     <>
       <SectionWrapper>
@@ -15,7 +21,7 @@ export default function AboutPage() {
           title="About Me"
           subtitle="My journey, expertise, and the story behind my passion for technology."
         />
-        <ProfileSection />
+        <ProfileSection about={about} name={displayName} />
       </SectionWrapper>
 
       <SectionWrapper className="bg-background/90">

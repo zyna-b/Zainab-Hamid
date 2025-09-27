@@ -1,16 +1,18 @@
 import { PageHeader } from '@/components/shared/page-header';
 import { SectionWrapper } from '@/components/shared/section-wrapper';
 import { ProjectGrid } from '@/components/portfolio/project-grid';
-import { PROJECTS_DATA } from '@/lib/constants';
+import { fetchProjects } from '@/lib/content-service';
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+  const projects = await fetchProjects();
+
   return (
     <SectionWrapper>
       <PageHeader
         title="My Portfolio"
         subtitle="A selection of projects that demonstrate my skills and passion for development and AI."
       />
-      <ProjectGrid projects={PROJECTS_DATA} />
+      <ProjectGrid projects={projects} />
     </SectionWrapper>
   );
 }

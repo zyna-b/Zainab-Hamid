@@ -1,17 +1,23 @@
-import { SKILLS_DATA } from '@/lib/constants';
 import { Card, CardContent } from '@/components/ui/card';
+import { fetchSkills } from '@/lib/content-service';
 
-export function SkillsSection() {
-  const categories = Array.from(new Set(SKILLS_DATA.map(skill => skill.category)));
+export async function SkillsSection() {
+  const skills = await fetchSkills();
+  const categories = Array.from(new Set(skills.map(skill => skill.category)));
 
   return (
     <div className="space-y-12">
       <h2 className="font-headline text-3xl font-semibold text-center text-accent">Skills & Tech Stack</h2>
+      {skills.length === 0 && (
+        <p className="text-center text-muted-foreground">
+          Add skill entries from the admin dashboard to populate this section.
+        </p>
+      )}
       {categories.map(category => (
         <div key={category} className="mb-10">
           <h3 className="font-headline text-2xl font-medium mb-6 text-accent border-b-2 border-accent/30 pb-2">{category}</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {SKILLS_DATA.filter(skill => skill.category === category).map((skill) => {
+            {skills.filter(skill => skill.category === category).map((skill) => {
               return (
                 <Card 
                   key={skill.name} 

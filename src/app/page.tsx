@@ -4,9 +4,27 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { ArrowRight, Brain, Code, Briefcase } from 'lucide-react';
 import { SectionWrapper } from '@/components/shared/section-wrapper';
 import Image from 'next/image';
+import { getSiteContent } from '@/lib/data-store';
 import { SITE_NAME, SITE_DESCRIPTION, RESUME_LINK } from '@/lib/constants';
 
-export default function HomePage() {
+export const dynamic = 'force-dynamic';
+
+export default async function HomePage() {
+  const site = await getSiteContent();
+  const hero = site.hero ?? {
+    name: SITE_NAME,
+    role: SITE_DESCRIPTION,
+    intro: 'I transform complex problems into elegant, scalable solutions.',
+    summary: 'Welcome to my digital space where I showcase my journey, projects, and expertise in the world of technology.',
+    resumeUrl: RESUME_LINK,
+  };
+
+  const heroName = hero.name || SITE_NAME;
+  const heroRole = hero.role || SITE_DESCRIPTION;
+  const heroIntro = hero.intro || 'I transform complex problems into elegant, scalable solutions.';
+  const heroSummary = hero.summary || 'Welcome to my digital space where I showcase my journey, projects, and expertise in the world of technology.';
+  const resumeUrl = hero.resumeUrl || RESUME_LINK;
+
   return (
     <>
       {/* Hero Section */}
@@ -14,13 +32,13 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-up space-y-6">
             <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-bold text-primary">
-              Hi, I&apos;m {SITE_NAME}
+              Hi, I&apos;m {heroName}
             </h1>
             <p className="text-xl md:text-2xl text-foreground leading-relaxed">
-              A passionate <span className="text-accent font-semibold">{SITE_DESCRIPTION}</span>. I transform complex problems into elegant, scalable solutions.
+              A passionate <span className="text-accent font-semibold">{heroRole}</span>. {heroIntro}
             </p>
             <p className="text-muted-foreground">
-              Welcome to my digital space where I showcase my journey, projects, and expertise in the world of technology.
+              {heroSummary}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild className="transition-transform hover:scale-105">
@@ -29,21 +47,24 @@ export default function HomePage() {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="transition-transform hover:scale-105">
-                <Link href={RESUME_LINK} target="_blank" download>
+                <Link href={resumeUrl} target="_blank" download>
                   Download Resume
                 </Link>
               </Button>
             </div>
           </div>
           <div className="hidden md:flex justify-center items-center relative z-10 animate-fade-in animation-delay-300 bg-transparent">
-            <Image
-              src="/images/zainab.jpg"
-              alt="Zainab Hamid"
-              width={500}
-              height={500}
-              className="rounded-full shadow-2xl border-4 border-primary/50 object-cover"
-              priority
-            />
+            <div className="relative">
+              <div className="absolute -inset-1 rounded-full bg-primary/30 blur-xl"></div>
+              <Image
+                src="/images/zainab.jpg"
+                alt="Zainab Hamid"
+                width={500}
+                height={500}
+                className="rounded-full shadow-2xl border-4 border-primary/50 object-cover relative z-10"
+                priority
+              />
+            </div>
           </div>
         </div>
       </SectionWrapper>

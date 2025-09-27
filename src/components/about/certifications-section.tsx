@@ -1,15 +1,22 @@
-import { CERTIFICATIONS_DATA } from '@/lib/constants';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Award, ExternalLink } from 'lucide-react';
+import { fetchCertifications } from '@/lib/content-service';
 
-export function CertificationsSection() {
+export async function CertificationsSection() {
+  const certifications = await fetchCertifications();
+
   return (
     <div className="space-y-8">
       <h2 className="font-headline text-3xl font-semibold text-center text-accent">Certifications</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {CERTIFICATIONS_DATA.map((cert) => (
+        {certifications.length === 0 && (
+          <p className="md:col-span-2 text-center text-muted-foreground">
+            Certifications will appear here after you add them in the admin dashboard.
+          </p>
+        )}
+        {certifications.map((cert) => (
           <Card key={cert.name} className="flex flex-col bg-card/80 transition-shadow">
             <CardHeader className="flex-row items-start gap-4 space-y-0 pb-4">
               <Award className="h-8 w-8 text-primary mt-1" />

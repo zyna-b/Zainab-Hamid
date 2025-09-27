@@ -1,13 +1,20 @@
-import { EXPERIENCE_DATA } from '@/lib/constants';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Briefcase } from 'lucide-react';
+import { fetchExperiences } from '@/lib/content-service';
 
-export function ExperienceSection() {
+export async function ExperienceSection() {
+  const experiences = await fetchExperiences();
+
   return (
     <div className="space-y-10">
       <h2 className="font-headline text-3xl font-semibold text-center text-accent">Professional Experience</h2>
       <div className="space-y-6">
-        {EXPERIENCE_DATA.map((exp, index) => (
+        {experiences.length === 0 && (
+          <p className="text-center text-muted-foreground">
+            Experience entries will appear here once you add them in the admin dashboard.
+          </p>
+        )}
+        {experiences.map((exp, index) => (
           <Card key={index} className="bg-card/90 transition-shadow duration-300 hover:shadow-primary/10">
             <CardHeader className="pb-3">
               <div className="flex flex-col sm:flex-row sm:items-start sm:gap-4">

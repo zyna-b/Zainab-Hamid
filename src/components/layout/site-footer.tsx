@@ -42,13 +42,21 @@ export function SiteFooter() {
             </Button>
           </div>
 
-          <div className="text-center md:text-right text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
-            <p>
-              <Link href={`mailto:${EMAIL}`} className="hover:text-primary transition-colors">
-                {EMAIL}
-              </Link>
-            </p>
+          <div className="text-center md:text-right space-y-3 text-sm text-muted-foreground">
+            <div>
+              <p>&copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
+              <p>
+                <Link href={`mailto:${EMAIL}`} className="hover:text-primary transition-colors">
+                  {EMAIL}
+                </Link>
+              </p>
+            </div>
+            <div className="flex flex-col items-center md:items-end gap-2 text-sm">
+              <span className="text-xs uppercase tracking-wide text-muted-foreground/80">Admin access</span>
+              <Button asChild size="sm" variant="outline" className="w-full md:w-auto">
+                <Link href="/admin/login">Login</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

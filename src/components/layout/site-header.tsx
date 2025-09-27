@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Code } from "lucide-react";
+import { Menu, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { NAV_ITEMS, SITE_NAME } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -49,6 +50,7 @@ export function SiteHeader() {
               {item.title}
             </Link>
           ))}
+          <ThemeToggle />
         </nav>
 
         {/* Mobile Navigation */}
@@ -80,6 +82,10 @@ export function SiteHeader() {
                     </Link>
                   </SheetClose>
                 ))}
+                <div className="flex items-center pt-4">
+                  <span className="text-sm font-medium mr-2">Toggle Theme:</span>
+                  <ThemeToggle />
+                </div>
               </div>
             </SheetContent>
           </Sheet>

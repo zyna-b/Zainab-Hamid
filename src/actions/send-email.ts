@@ -4,6 +4,7 @@
 import { z } from "zod";
 import nodemailer from "nodemailer";
 import { SITE_NAME } from "@/lib/constants"; // Import SITE_NAME for branding
+import { getEnv, getNumberEnv, getRequiredEnv } from "@/lib/env";
 
 const ContactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -23,17 +24,34 @@ export type ContactFormState = {
   success: boolean;
 };
 
-// WARNING: Hardcoding credentials is a security risk. Use environment variables in production.
-const GMAIL_USER = "zainabhamid2468@gmail.com";
-const GMAIL_APP_PASSWORD = "gbrcntrpqierdeqv";
+const EMAIL_TRANSPORT_SERVICE = getEnv("EMAIL_TRANSPORT_SERVICE") ?? "gmail";
+const EMAIL_TRANSPORT_USER = getRequiredEnv("EMAIL_TRANSPORT_USER");
+const EMAIL_TRANSPORT_PASS = getRequiredEnv("EMAIL_TRANSPORT_PASS");
+const CONTACT_RECIPIENT_EMAIL = getEnv("CONTACT_RECIPIENT_EMAIL") ?? EMAIL_TRANSPORT_USER;
+const EMAIL_FROM_ADDRESS = getEnv("EMAIL_FROM_ADDRESS") ?? EMAIL_TRANSPORT_USER;
+const EMAIL_TRANSPORT_HOST = getEnv("EMAIL_TRANSPORT_HOST");
+const EMAIL_TRANSPORT_PORT = getNumberEnv("EMAIL_TRANSPORT_PORT", 587);
+const EMAIL_TRANSPORT_SECURE = getEnv("EMAIL_TRANSPORT_SECURE") === "true";
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: GMAIL_USER,
-    pass: GMAIL_APP_PASSWORD,
-  },
-});
+const transporter = nodemailer.createTransport(
+  EMAIL_TRANSPORT_HOST
+    ? {
+        host: EMAIL_TRANSPORT_HOST,
+        port: EMAIL_TRANSPORT_PORT,
+        secure: EMAIL_TRANSPORT_SECURE,
+        auth: {
+          user: EMAIL_TRANSPORT_USER,
+          pass: EMAIL_TRANSPORT_PASS,
+        },
+      }
+    : {
+        service: EMAIL_TRANSPORT_SERVICE,
+        auth: {
+          user: EMAIL_TRANSPORT_USER,
+          pass: EMAIL_TRANSPORT_PASS,
+        },
+      }
+);
 
 export async function sendEmail(
   prevState: ContactFormState,
@@ -58,7 +76,7 @@ export async function sendEmail(
 
   const mailToOwnerOptions = {
     from: `"${name}" <${email}>`, // Show client's name and email as sender
-    to: GMAIL_USER,
+    to: CONTACT_RECIPIENT_EMAIL,
     subject: `New Contact Form Submission: ${subject}`,
     html: `
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
@@ -79,7 +97,7 @@ export async function sendEmail(
   };
 
   const mailToClientOptions = {
-    from: `"${SITE_NAME}" <${GMAIL_USER}>`, // Use SITE_NAME for branding
+    from: `"${SITE_NAME}" <${EMAIL_FROM_ADDRESS}>`, // Use SITE_NAME for branding
     to: email,
     subject: `Thank You for Contacting ${SITE_NAME}!`,
     html: `

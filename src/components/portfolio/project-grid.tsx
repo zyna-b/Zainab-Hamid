@@ -4,7 +4,6 @@ import type { Project, ProjectCategory } from '@/lib/types';
 import { ProjectCard } from './project-card';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 
 interface ProjectGridProps {
   projects: Project[];

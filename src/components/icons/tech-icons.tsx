@@ -2,9 +2,7 @@
 import { cn } from '@/lib/utils';
 import type { SVGProps } from 'react';
 
-interface TechIconProps extends SVGProps<SVGSVGElement> {
-  // className might be passed by SkillsSection for sizing
-}
+type TechIconProps = SVGProps<SVGSVGElement>;
 
 // Generic placeholder for icons not fully implemented here with full SVGs
 const GenericTechIcon = ({ className, char, bgColor = 'bg-muted/30', textColor = 'text-foreground/80' }: { className?: string; char: string, bgColor?: string, textColor?: string }) => (
