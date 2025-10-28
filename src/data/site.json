@@ -1,13 +1,13 @@
 {
   "hero": {
     "name": "Zainab Hamid",
-    "role": "Full-Stack Developer & AI Engineer",
-    "intro": "I transform complex problems into elegant, scalable solutions.",
+    "role": "AI Engineer & AI-Powered Full Stack Developer",
+    "intro": "I transform complex problems and provide efficient AI-powered solutions, according to your business needs.",
     "summary": "Welcome to my digital space where I showcase my journey, projects, and expertise in the world of technology.",
     "resumeUrl": "/uploads/resume/850f5a8e-8620-4744-9624-a8de07d67551.pdf"
   },
   "about": {
-    "imageSrc": "/images/zainab-side.png",
+    "imageSrc": "/uploads/about/bcd7b815-5906-4f87-bf33-bf5a7773e047.png",
     "imageAlt": "Professional portrait of Zainab Hamid",
     "storyHeading": "My Story",
     "storyParagraphs": [

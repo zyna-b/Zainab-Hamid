@@ -18,23 +18,6 @@
       "category": "AI"
     },
     {
-      "id": "project-99",
-      "title": "AI-Powered Content Recommendation Engine",
-      "description": "Developed a personalized content recommendation system using collaborative filtering and NLP techniques. Improved user engagement by 30%.",
-      "imageSrc": "/uploads/projects/ad9b7cae-cbfe-41e0-a34e-c0c5fa9be938.jpg",
-      "dataAiHint": "technology abstract",
-      "tags": [
-        "AI/ML",
-        "Python",
-        "TensorFlow",
-        "Flask",
-        "React"
-      ],
-      "liveLink": "#",
-      "sourceLink": "#",
-      "category": "AI"
-    },
-    {
       "id": "project-2",
       "title": "E-commerce Platform Rebuild",
       "description": "Led the full-stack development of a modern e-commerce platform with Next.js, Stripe integration, and a custom CMS.",
@@ -125,19 +108,6 @@
       "title": "Real-time Object Detection",
       "description": "A live demo showcasing object detection in video streams using YOLOv5. Try it with your webcam!",
       "imageSrc": "/images/real-time-object-detection.png",
-      "dataAiHint": "camera technology",
-      "tags": [
-        "Computer Vision",
-        "YOLOv5",
-        "Python"
-      ],
-      "interactiveLink": "#"
-    },
-    {
-      "id": "exp-77",
-      "title": "Real-time Object Detection",
-      "description": "A live demo showcasing object detection in video streams using YOLOv5. Try it with your webcam!",
-      "imageSrc": "/uploads/aiexperiments/6bf1066f-e01f-4327-ac1c-489ed6882c0e.jpg",
       "dataAiHint": "camera technology",
       "tags": [
         "Computer Vision",

@@ -49,6 +49,9 @@ export async function middleware(request: NextRequest) {
   return NextResponse.next();
 }
 
+// Force Edge Runtime for middleware
+export const runtime = 'edge';
+
 export const config = {
   matcher: ['/admin/:path*'],
 };
