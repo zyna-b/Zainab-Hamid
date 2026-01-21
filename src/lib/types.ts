@@ -28,6 +28,7 @@ export type Service = {
   title: string;
   description: string;
   icon: LucideIcon;
+  features?: string[];
 };
 
 export type Skill = {
