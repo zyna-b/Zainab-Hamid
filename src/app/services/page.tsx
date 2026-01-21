@@ -110,7 +110,7 @@ export default async function ServicesPage() {
                       </p>
                       {service.features && service.features.length > 0 && (
                         <ul className="mt-4 sm:mt-6 flex flex-wrap gap-2 sm:gap-3">
-                          {service.features.map((feature, j) => (
+                          {service.features?.map((feature, j) => (
                             <li
                               key={j}
                               className="text-[10px] sm:text-xs uppercase tracking-wider px-2 sm:px-3 py-1 sm:py-1.5 border border-border bg-card/50"
