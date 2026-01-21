@@ -7,14 +7,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useEffect } from "react";
 
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { sendEmail, type ContactFormState } from "@/actions/send-email";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Send } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -28,9 +26,14 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} className="w-full md:w-auto transition-transform hover:scale-105">
-      {pending ? "Sending..." : <>Send Message <Send className="ml-2 h-4 w-4" /></>}
-    </Button>
+    <button
+      type="submit"
+      disabled={pending}
+      className="btn-magnetic inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 text-sm uppercase tracking-widest font-medium hover:gap-4 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      {pending ? "Sending..." : "Send Message"}
+      <ArrowUpRight className="w-4 h-4" />
+    </button>
   );
 }
 
@@ -66,48 +69,87 @@ export function ContactForm() {
   const { errors: clientErrors } = form.formState;
   const serverErrors = state.errors;
 
-
   return (
-    <Card className="w-full max-w-2xl mx-auto border-primary/20">
-      <CardHeader className="text-center">
-        <CardTitle className="font-headline text-3xl text-primary">Get In Touch</CardTitle>
-        <CardDescription>
-          Have a project in mind, a question, or just want to say hi? Fill out the form below.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form action={formAction} className="space-y-6">
-          <div>
-            <Label htmlFor="name">Full Name</Label>
-            <Input id="name" type="text" {...form.register("name")} placeholder="Your Name" />
+    <div className="w-full">
+      <form action={formAction} className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <Label htmlFor="name" className="text-sm uppercase tracking-widest text-muted-foreground">
+              Name
+            </Label>
+            <Input
+              id="name"
+              type="text"
+              {...form.register("name")}
+              placeholder="Your name"
+              className="bg-transparent border-0 border-b border-border rounded-none px-0 py-3 text-base focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/50"
+            />
             {(clientErrors.name || serverErrors?.name) && (
-              <p className="text-sm text-destructive mt-1">{clientErrors.name?.message || serverErrors?.name?.[0]}</p>
+              <p className="text-sm text-destructive mt-1">
+                {clientErrors.name?.message || serverErrors?.name?.[0]}
+              </p>
             )}
           </div>
-          <div>
-            <Label htmlFor="email">Email Address</Label>
-            <Input id="email" type="email" {...form.register("email")} placeholder="your.email@example.com" />
-             {(clientErrors.email || serverErrors?.email) && (
-              <p className="text-sm text-destructive mt-1">{clientErrors.email?.message || serverErrors?.email?.[0]}</p>
+
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-sm uppercase tracking-widest text-muted-foreground">
+              Email
+            </Label>
+            <Input
+              id="email"
+              type="email"
+              {...form.register("email")}
+              placeholder="your@email.com"
+              className="bg-transparent border-0 border-b border-border rounded-none px-0 py-3 text-base focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/50"
+            />
+            {(clientErrors.email || serverErrors?.email) && (
+              <p className="text-sm text-destructive mt-1">
+                {clientErrors.email?.message || serverErrors?.email?.[0]}
+              </p>
             )}
           </div>
-          <div>
-            <Label htmlFor="subject">Subject</Label>
-            <Input id="subject" type="text" {...form.register("subject")} placeholder="Regarding..." />
-            {(clientErrors.subject || serverErrors?.subject) && (
-              <p className="text-sm text-destructive mt-1">{clientErrors.subject?.message || serverErrors?.subject?.[0]}</p>
-            )}
-          </div>
-          <div>
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" {...form.register("message")} placeholder="Your message here..." rows={5} />
-            {(clientErrors.message || serverErrors?.message) && (
-              <p className="text-sm text-destructive mt-1">{clientErrors.message?.message || serverErrors?.message?.[0]}</p>
-            )}
-          </div>
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="subject" className="text-sm uppercase tracking-widest text-muted-foreground">
+            Subject
+          </Label>
+          <Input
+            id="subject"
+            type="text"
+            {...form.register("subject")}
+            placeholder="What's this about?"
+            className="bg-transparent border-0 border-b border-border rounded-none px-0 py-3 text-base focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/50"
+          />
+          {(clientErrors.subject || serverErrors?.subject) && (
+            <p className="text-sm text-destructive mt-1">
+              {clientErrors.subject?.message || serverErrors?.subject?.[0]}
+            </p>
+          )}
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="message" className="text-sm uppercase tracking-widest text-muted-foreground">
+            Message
+          </Label>
+          <Textarea
+            id="message"
+            {...form.register("message")}
+            placeholder="Tell me about your project..."
+            rows={5}
+            className="bg-transparent border-0 border-b border-border rounded-none px-0 py-3 text-base focus-visible:ring-0 focus-visible:border-foreground transition-colors placeholder:text-muted-foreground/50 resize-none"
+          />
+          {(clientErrors.message || serverErrors?.message) && (
+            <p className="text-sm text-destructive mt-1">
+              {clientErrors.message?.message || serverErrors?.message?.[0]}
+            </p>
+          )}
+        </div>
+
+        <div className="pt-4">
           <SubmitButton />
-        </form>
-      </CardContent>
-    </Card>
+        </div>
+      </form>
+    </div>
   );
 }

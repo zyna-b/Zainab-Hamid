@@ -1,7 +1,6 @@
-import { Button } from '@/components/ui/button';
 import { getSiteContent } from '@/lib/data-store';
 import { RESUME_LINK } from '@/lib/constants';
-import { Download } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 export async function ResumeButton() {
@@ -9,13 +8,14 @@ export async function ResumeButton() {
   const resumeUrl = site.hero?.resumeUrl || RESUME_LINK;
 
   return (
-    <div className="text-center mt-12">
-      <Button size="lg" asChild className="transition-transform hover:scale-105">
-        <Link href={resumeUrl} target="_blank" download>
-          <Download className="mr-2 h-5 w-5" />
-          Download My Resume
-        </Link>
-      </Button>
-    </div>
+    <Link
+      href={resumeUrl}
+      target="_blank"
+      download
+      className="slide-up delay-200 btn-magnetic inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 text-sm uppercase tracking-widest font-medium hover:gap-4 transition-all duration-500"
+    >
+      Download Resume
+      <ArrowUpRight className="w-4 h-4" />
+    </Link>
   );
 }

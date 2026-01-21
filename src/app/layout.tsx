@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { Space_Grotesk, Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { SiteHeader } from '@/components/layout/site-header';
@@ -7,10 +7,16 @@ import { SiteFooter } from '@/components/layout/site-footer';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/contexts/theme-context';
 
-const fontPoppins = Poppins({
+const fontHeadline = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins', 
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-headline',
+});
+
+const fontBody = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-body',
 });
 
 export const metadata: Metadata = {
@@ -30,14 +36,15 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased', 
-          fontPoppins.variable 
+          'min-h-screen bg-background font-body antialiased',
+          fontHeadline.variable,
+          fontBody.variable
         )}
       >
         <ThemeProvider>
-          <div className="relative flex min-h-dvh flex-col bg-background">
+          <div className="relative min-h-dvh bg-background">
             <SiteHeader />
-            <main className="flex-1">{children}</main>
+            <main>{children}</main>
             <SiteFooter />
           </div>
           <Toaster />

@@ -3,7 +3,6 @@
 import type { Project, ProjectCategory } from '@/lib/types';
 import { ProjectCard } from './project-card';
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
 
 interface ProjectGridProps {
   projects: Project[];
@@ -20,35 +19,52 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
 
   return (
     <div>
-      <div className="mb-8 flex flex-wrap justify-center gap-2">
-        <Button
-          variant={selectedCategory === "All" ? "default" : "outline"}
+      {/* Filter Tabs */}
+      <div className="mb-12 flex flex-wrap gap-3 slide-up">
+        <button
           onClick={() => setSelectedCategory("All")}
-          className="transition-all"
+          className={`px-5 py-2.5 text-sm uppercase tracking-widest border transition-all duration-300 ${
+            selectedCategory === "All"
+              ? "bg-foreground text-background border-foreground"
+              : "bg-transparent text-foreground border-border hover:border-foreground"
+          }`}
         >
-          All Projects
-        </Button>
+          All
+        </button>
         {CATEGORIES.map(category => (
-          <Button
+          <button
             key={category}
-            variant={selectedCategory === category ? "default" : "outline"}
             onClick={() => setSelectedCategory(category)}
-            className="transition-all"
+            className={`px-5 py-2.5 text-sm uppercase tracking-widest border transition-all duration-300 ${
+              selectedCategory === category
+                ? "bg-foreground text-background border-foreground"
+                : "bg-transparent text-foreground border-border hover:border-foreground"
+            }`}
           >
             {category}
-          </Button>
+          </button>
         ))}
       </div>
+
+      {/* Projects Grid */}
       {filteredProjects.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {filteredProjects.map((project, index) => (
-            <div key={project.id} className="animate-slide-in-up" style={{animationDelay: `${index * 100}ms`}}>
+            <div
+              key={project.id}
+              className="slide-up"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               <ProjectCard project={project} />
             </div>
           ))}
         </div>
       ) : (
-        <p className="text-center text-muted-foreground text-lg py-10">No projects found for this category.</p>
+        <div className="text-center py-20">
+          <p className="text-lg text-muted-foreground">
+            No projects in this category yet.
+          </p>
+        </div>
       )}
     </div>
   );

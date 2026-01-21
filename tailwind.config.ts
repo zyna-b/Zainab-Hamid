@@ -16,15 +16,16 @@ export default {
         "2xl": "1400px",
       },
     },
+    screens: {
+      'xs': '400px',
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
-        // Poppins is loaded via Next/font and available as var(--font-poppins)
-        // Set 'sans' to use this variable, then 'Poppins' by name, then Tailwind's default sans-serif stack.
-        sans: ['var(--font-poppins)', 'Poppins', ...defaultTheme.fontFamily.sans],
-        // Headlines will also use the same Poppins-based sans-serif stack.
-        headline: ['var(--font-poppins)', 'Poppins', ...defaultTheme.fontFamily.sans],
-        // Code will use Tailwind's default monospace stack for readability.
-        code: defaultTheme.fontFamily.mono,
+        headline: ['var(--font-headline)', 'Space Grotesk', ...defaultTheme.fontFamily.sans],
+        body: ['var(--font-body)', 'Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-body)', 'Inter', ...defaultTheme.fontFamily.sans],
+        mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -79,9 +80,9 @@ export default {
         },
       },
       borderRadius: {
-        lg: 'var(--radius)', // effectively 1rem
-        md: 'calc(var(--radius) - 0.25rem)', // effectively 0.75rem
-        sm: 'calc(var(--radius) - 0.5rem)', // effectively 0.5rem
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 0.25rem)',
+        sm: 'calc(var(--radius) - 0.5rem)',
       },
       boxShadow: {
         sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
@@ -95,35 +96,17 @@ export default {
       },
       keyframes: {
         'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         },
-        'fade-in': {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        'slide-in-up': {
-          '0%': { transform: 'translateY(20px)', opacity: '0'},
-          '100%': { transform: 'translateY(0)', opacity: '1'},
-        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-in': 'fade-in 0.5s ease-out',
-        'slide-in-up': 'slide-in-up 0.5s ease-out forwards',
       },
     },
   },

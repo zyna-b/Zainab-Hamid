@@ -1,10 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Project } from '@/lib/types';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github } from 'lucide-react';
+import { ArrowUpRight, Github } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
@@ -12,48 +9,77 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="flex flex-col h-full overflow-hidden transition-all duration-300 ease-out hover:border-primary/30">
-      <CardHeader className="p-0">
-        <div className="aspect-video overflow-hidden relative">
+    <article className="group relative">
+      {/* Image */}
+      <div className="aspect-[4/3] overflow-hidden bg-card mb-6">
+        <div className="relative w-full h-full img-mask">
           <Image
             src={project.imageSrc}
             alt={project.title}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, 50vw"
             data-ai-hint={project.dataAiHint}
           />
         </div>
-      </CardHeader>
-      <CardContent className="flex-grow p-6 space-y-3">
-        <CardTitle className="font-headline text-xl text-primary">{project.title}</CardTitle>
-        <CardDescription className="text-muted-foreground text-sm leading-relaxed min-h-[4.5rem] line-clamp-3">{project.description}</CardDescription>
-        <div className="flex flex-wrap gap-2 pt-2">
-          {project.tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs bg-accent/20 text-accent-foreground hover:bg-accent/40">
+        {/* Overlay on hover */}
+        <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-all duration-500" />
+      </div>
+
+      {/* Content */}
+      <div className="space-y-4">
+        {/* Category & Tags */}
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs uppercase tracking-widest text-muted-foreground">
+            {project.category}
+          </span>
+          <span className="text-muted-foreground/30">/</span>
+          {project.tags.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="text-xs uppercase tracking-wider text-muted-foreground"
+            >
               {tag}
-            </Badge>
+            </span>
           ))}
         </div>
-      </CardContent>
-      <CardFooter className="p-6 pt-0 border-t mt-auto">
-        <div className="flex w-full justify-start space-x-3">
+
+        {/* Title */}
+        <h3 className="text-2xl md:text-3xl font-headline font-semibold leading-tight group-hover:translate-x-1 transition-transform duration-300">
+          {project.title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-muted-foreground leading-relaxed line-clamp-2">
+          {project.description}
+        </p>
+
+        {/* Links */}
+        <div className="flex items-center gap-4 pt-2">
           {project.liveLink && project.liveLink !== "#" && (
-            <Button variant="outline" size="sm" asChild>
-              <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-              </Link>
-            </Button>
+            <Link
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/link inline-flex items-center gap-2 text-sm uppercase tracking-widest hover-line"
+            >
+              View Project
+              <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-300" />
+            </Link>
           )}
           {project.sourceLink && project.sourceLink !== "#" && (
-            <Button variant="ghost" size="sm" asChild>
-              <Link href={project.sourceLink} target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-4 w-4" /> Source Code
-              </Link>
-            </Button>
+            <Link
+              href={project.sourceLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/link inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              <Github className="w-4 h-4" />
+              Source
+            </Link>
           )}
         </div>
-      </CardFooter>
-    </Card>
+      </div>
+    </article>
   );
 }

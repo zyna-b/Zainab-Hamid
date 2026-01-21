@@ -10,22 +10,24 @@ export async function FaqSection() {
   const faqs = await fetchFaqs();
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-16 md:mt-24">
-      <h2 className="font-headline text-3xl font-semibold text-center text-accent mb-10">
-        Frequently Asked Questions
-      </h2>
+    <div className="max-w-4xl">
       {faqs.length === 0 ? (
-        <p className="text-center text-muted-foreground">
-          Add FAQ entries from the admin dashboard to populate this section.
+        <p className="text-muted-foreground">
+          FAQs will appear here once added.
         </p>
       ) : (
-        <Accordion type="single" collapsible className="w-full space-y-3">
+        <Accordion type="single" collapsible className="space-y-0">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="bg-card/50 border border-border rounded-lg px-2 hover:border-primary/30 transition-colors">
-              <AccordionTrigger className="text-left font-medium text-base hover:no-underline text-foreground/90 px-4 py-4">
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="border-b border-border slide-up"
+              style={{ animationDelay: `${index * 50}ms` }}
+            >
+              <AccordionTrigger className="text-left font-headline text-lg md:text-xl font-medium py-6 hover:no-underline hover:translate-x-1 transition-transform [&[data-state=open]>svg]:rotate-45">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground px-4 pb-4 text-sm leading-relaxed">
+              <AccordionContent className="text-muted-foreground pb-6 text-base leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
