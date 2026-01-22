@@ -145,10 +145,20 @@
   ],
   "experiences": [
     {
+      "role": "AI Software Engineer",
+      "company": "Liztek",
+      "location": "Toronto, Ontario",
+      "date": "Jan 2026 – Present",
+      "description": [
+        "Actively working on fintech products, leveraging AI and backend expertise to deliver scalable financial technology solutions.",
+        "Developing intelligent systems that integrate seamlessly with modern financial infrastructure."
+      ]
+    },
+    {
       "role": "AI Engineer",
       "company": "Deepvision.ai",
       "location": "Lahore, Pakistan",
-      "date": "Oct 2025 – Present",
+      "date": "Oct 2025 – Dec 2025",
       "description": [
         "Leads front-end and back-end development of scalable and performant web applications.",
         "Focuses on cross-functional collaboration, UX optimization, and ensuring responsiveness and load efficiency across devices."
@@ -156,7 +166,7 @@
     },
     {
       "role": "Chief Developer",
-      "company": "Codantrix",
+      "company": "Codantrix Labs",
       "location": "Lahore, Pakistan",
       "date": "Nov 2024 – October 2025",
       "description": [
@@ -402,39 +412,45 @@
   "services": [
     {
       "id": "service-1",
-      "title": "Custom AI Solutions",
-      "description": "Leverage the power of AI with bespoke solutions including machine learning models, NLP, computer vision, and predictive analytics to solve your unique business challenges.",
+      "title": "AI & Intelligent Solutions",
+      "tagline": "Smarter software for modern businesses.",
+      "description": "I integrate Artificial Intelligence into your applications to automate tasks and improve user experience. From Generative AI features to custom machine learning models, I build smart tools that help your business grow.",
       "icon": "LucideBrain"
     },
     {
       "id": "service-2",
       "title": "Full-Stack Web Development",
-      "description": "End-to-end web application development, from intuitive front-end interfaces with React/Next.js to robust back-end systems using Node.js, Python, or Java.",
+      "tagline": "Complete web solutions, front to back.",
+      "description": "Building dynamic, responsive, and user-friendly websites using Next.js and React. I handle everything—from the visual interface users see to the secure database systems that power it.",
       "icon": "LucideCode"
     },
     {
       "id": "service-3",
-      "title": "Mobile App Development",
-      "description": "Cross-platform and native mobile app development for iOS and Android, focusing on user experience, performance, and scalability.",
-      "icon": "LucideSmartphone"
+      "title": "MVP Development for Startups",
+      "tagline": "Turning your idea into a product.",
+      "description": "Specializing in rapid Minimum Viable Product (MVP) creation. I help founders take their concept from a rough sketch to a fully functional product that is ready for users and investors.",
+      "icon": "LucideRocket"
     },
     {
       "id": "service-4",
-      "title": "Software Development & Architecture",
-      "description": "Building scalable and maintainable software solutions, API design, microservices architecture, and cloud-native application development.",
-      "icon": "Briefcase"
+      "title": "Custom Software Development",
+      "tagline": "Tailored software for unique problems.",
+      "description": "When off-the-shelf apps aren't enough, I build custom software designed specifically for your workflow. Reliable, efficient, and built to solve your specific business challenges.",
+      "icon": "LucideSettings"
     },
     {
       "id": "service-5",
-      "title": "UI/UX Design & Prototyping",
-      "description": "Crafting user-centric designs and interactive prototypes that enhance usability and deliver engaging digital experiences.",
-      "icon": "Palette"
+      "title": "Backend & API Engineering",
+      "tagline": "The engine behind the application.",
+      "description": "Designing robust back-end systems and APIs using Python and Node.js. I ensure your data is secure, your server is fast, and your applications connect seamlessly with other services.",
+      "icon": "LucideServer"
     },
     {
       "id": "service-6",
-      "title": "Tech Consulting & Strategy",
-      "description": "Providing expert guidance on technology adoption, digital transformation, and AI strategy to help businesses innovate and grow.",
-      "icon": "Zap"
+      "title": "Technical Strategy & Consulting",
+      "tagline": "Expert advice to guide your path.",
+      "description": "Helping you make the right technical choices. I provide roadmap planning and technology selection advice to ensure you build your product the right way from day one.",
+      "icon": "LucideLightbulb"
     }
   ],
   "faqs": [

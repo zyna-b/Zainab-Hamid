@@ -113,7 +113,7 @@ export function ProfileSection({ about, name }: ProfileSectionProps) {
           {/* Bottom badge */}
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20">
             <div className="bg-foreground text-background px-6 py-3 rounded-full shadow-xl">
-              <span className="text-xs font-bold uppercase tracking-[0.15em]">Since 2019</span>
+              <span className="text-xs font-bold uppercase tracking-[0.15em]">Since 2022</span>
             </div>
           </div>
           

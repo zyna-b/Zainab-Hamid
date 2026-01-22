@@ -9,7 +9,7 @@ export default async function PortfolioPage() {
   return (
     <div className="grain relative">
       {/* Hero Section - Completely Redesigned */}
-      <section className="relative min-h-[85vh] sm:min-h-screen flex items-end px-4 sm:px-8 lg:px-16 pb-16 sm:pb-20 md:pb-24 pt-32 overflow-hidden">
+      <section className="sticky top-0 z-[10] relative min-h-[85vh] sm:min-h-screen flex items-end px-4 sm:px-8 lg:px-16 pb-16 sm:pb-20 md:pb-24 pt-32 overflow-hidden bg-background">
         {/* Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Large background text */}
@@ -85,7 +85,7 @@ export default async function PortfolioPage() {
       </section>
 
       {/* Projects Section - New Grid Layout */}
-      <section className="px-4 sm:px-8 lg:px-16 py-16 sm:py-20 md:py-24 border-t border-border">
+      <section className="sticky top-0 z-[11] px-4 sm:px-8 lg:px-16 py-16 sm:py-20 md:py-24 border-t border-border bg-background">
         <div className="max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <article

@@ -13,7 +13,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const SITE_NAME = "Zainab Hamid";
 export const SITE_DESCRIPTION = "Chief Developer & AI Engineer";
 export const EMAIL = "zainabhamid2468@gmail.com"; 
-export const RESUME_LINK = "/placeholder-resume.pdf"; 
+export const RESUME_LINK = "/uploads/resume/Resume_Zainab.pdf"; 
 
 export const SOCIAL_LINKS = {
   github: "https://github.com/zyna-b",
@@ -23,4 +23,3 @@ export const SOCIAL_LINKS = {
 
 // Dynamic content (projects, blogs, etc.) now lives in JSON under src/data and is
 // served through helper utilities in src/lib/content-service.ts.
-

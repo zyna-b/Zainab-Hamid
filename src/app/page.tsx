@@ -33,9 +33,9 @@ export default async function HomePage() {
   ];
 
   const services = [
-    { num: '01', title: 'AI & ML', desc: 'Intelligent systems that learn and adapt' },
-    { num: '02', title: 'Web Dev', desc: 'Scalable applications built to perform' },
-    { num: '03', title: 'Consulting', desc: 'Strategic guidance for digital growth' },
+    { num: '01', title: 'AI & Autonomous Agents', desc: 'Custom LLMs, RAG pipelines, and intelligent agents that automate complex business workflows.' },
+    { num: '02', title: 'Full-Stack Architecture', desc: 'High-performance systems built with Next.js, Laravel, and FastAPI for speed and massive scale.' },
+    { num: '03', title: 'MVP & Technical Strategy', desc: 'CTO-level guidance for founders. From tech stack selection to rapid product roadmapping.' },
   ];
 
   return (
@@ -80,9 +80,9 @@ export default async function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 mt-16 sm:mt-24 items-end">
             <div className="overflow-hidden max-w-xl">
               <p className="slide-up delay-400 text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Transforming complex problems into elegant concepts.
+                Architecting intelligent ecosystems.
                 <span className="block mt-4 text-foreground font-medium">
-                  Merging aesthetics with artificial intelligence.
+                  "I engineer scalable MVPs and autonomous AI agents for founders. Build a revenue engine, not just a website.
                 </span>
               </p>
             </div>
@@ -186,7 +186,7 @@ export default async function HomePage() {
                     
                     <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 space-y-3 z-10">
                        <div className="w-12 h-1 bg-foreground/30 group-hover:bg-foreground transition-colors duration-500" />
-                       <p className="text-xs uppercase tracking-widest text-muted-foreground font-medium">Since 2019</p>
+                       <p className="text-xs uppercase tracking-widest text-muted-foreground font-medium">Since 2022</p>
                        <p className="font-headline text-2xl sm:text-3xl font-bold leading-tight">
                          Transforming<br />Ideas into<br />Reality
                        </p>
@@ -224,7 +224,7 @@ export default async function HomePage() {
 
               <div className="overflow-hidden pt-4 border-l border-foreground/20 pl-6 sm:pl-8">
                 <p className="slide-up delay-300 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg">
-                  I&apos;m a results-driven developer who bridges the gap between complex backend logic and intuitive frontend design. My approach combines technical precision with creative problem-solving to build comprehensive digital ecosystems.
+                  I&apos;m a Full-Stack AI Engineer obsessed with scalable architecture. Blending Python (FastAPI) and Next.js with Autonomous Agents, I build systems that don't just function—they think. I turn complex logic into elegant, high-performance software.
                 </p>
               </div>
 

@@ -101,7 +101,7 @@ export function AboutScrollLayout({
 
                   <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 space-y-3 z-10">
                       <div className="w-12 h-1 bg-foreground/30 group-hover:bg-foreground transition-colors duration-500" />
-                      <p className="text-xs uppercase tracking-widest text-muted-foreground font-medium">Since 2019</p>
+                      <p className="text-xs uppercase tracking-widest text-muted-foreground font-medium">Since 2022</p>
                       <h3 className="font-headline text-2xl sm:text-3xl font-bold leading-tight">
                         {name.split(' ')[0]}<br />{name.split(' ')[1]}
                       </h3>
